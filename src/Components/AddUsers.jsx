@@ -1,8 +1,22 @@
 const AddUsers = () => {
+
+    const handleAddUser = e =>{
+        e.preventDefault()
+
+        const form = e.target 
+        const name = form.name.value
+        const email = form.email.value
+        const gender = form.gender.value
+        const status = form.status.value
+        const newUser = {name,email,gender,status}
+        console.log(newUser);
+        
+    }
+
   return (
     <div className="text-center mx-auto">
         <h2 className="text-2xl font-bold mb-6">Add User </h2>
-      <form className="">
+      <form onSubmit={handleAddUser} className="">
         <label className=" w-full max-w-xs">
           <div className="">
             <span className="">Your Name</span>
