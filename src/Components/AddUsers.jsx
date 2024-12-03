@@ -10,7 +10,18 @@ const AddUsers = () => {
         const status = form.status.value
         const newUser = {name,email,gender,status}
         console.log(newUser);
-        
+
+        fetch('http://localhost:7000/users',{
+            method:"POST",
+            headers:{
+                'content-type':"application/json"
+            },
+            body:JSON.stringify(newUser)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+        })
     }
 
   return (
